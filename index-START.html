@@ -55,6 +55,12 @@ function removeArticles(bandName){
 const sortedBands = bands.sort((a, b) => removeArticles(a) > removeArticles(b) ? 1 : -1);
 console.log(bands);
 
+document.querySelector("#bands").innerHTML = sortedBands.map(band => {
+  return `
+    <li>${band}</li>
+  `;
+}).join('');
+
 </script>
 
 </body>
